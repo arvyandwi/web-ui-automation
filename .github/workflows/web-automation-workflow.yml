@@ -31,7 +31,7 @@ jobs:
       uses: browser-actions/setup-chrome@v0.0.0
 
     - name: Build with Gradle Wrapper
-      run: chmod +x gradlew
+      run: gradlew
 
     # execute gradle command for running tests
     - name: Execute Test
