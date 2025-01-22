@@ -11,7 +11,7 @@ public class BaseTest {
 
     protected void getDriver() {
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         //WebDriverManager.chromedriver().clearDriverCache().setup();
         //WebDriverManager.chromedriver().clearResolutionCache().setup();
         WebDriverManager.chromedriver().setup();
