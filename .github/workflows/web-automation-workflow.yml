@@ -39,3 +39,20 @@ jobs:
     # execute gradle command for running tests
     - name: Execute Test
       run: ./gradlew cucumber
+
+    # Archive Test Result
+    - name: Archive Test Result
+      uses: actions/upload-artifact@v4.6.0
+      if: always()
+      with:
+        name: Cucumber Report
+        path: reports
+
+    # Deploy to Github Pages
+    - name: Deploy Reports to Github Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v4.0.0
+      with:
+        personal_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: reports
+      
