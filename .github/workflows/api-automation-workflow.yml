@@ -51,7 +51,7 @@ jobs:
       if: always()
       with:
         name: API Test Report
-        path: allure-report
+        path: build/allure-results
 
     # Deploy to Github Pages
     - name: Deploy Reports to Github Pages
@@ -59,4 +59,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v4.0.0
       with:
         personal_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: allure-report
+        publish_dir: build/allure-report
