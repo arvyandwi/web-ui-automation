@@ -35,11 +35,12 @@ jobs:
     - name: Execute Test
       run: ./gradlew testApi
 
-    # Install Allure Commandline
-    - name: Install Allure Commandline
-      run: |
-        sudo apt-get update
-        sudo apt-get install allure
+    # Install Node.js and Allure via npm
+    - name: Install Node.js and Allure
+      uses: actions/setup-node@v3
+      with:
+        node-version: '22.11.0'  # Gunakan versi Node.js yang sesuai
+    - run: npm install -g allure-commandline --save-dev
 
     - name: Generate Allure Report
       run: allure generate build/allure-results --clean -o build/allure-report
