@@ -41,7 +41,7 @@ jobs:
       if: always()
       with:
         name: API Test Report
-        path: reports
+        path: target/index.html
 
     # Deploy to Github Pages
     - name: Deploy Reports to Github Pages
@@ -49,4 +49,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v4.0.0
       with:
         personal_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: reports
+        publish_dir: target
