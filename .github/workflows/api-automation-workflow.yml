@@ -35,8 +35,15 @@ jobs:
     - name: Execute Test
       run: ./gradlew testApi
 
+    # Install Allure Commandline
+    - name: Install Allure Commandline
+      run: |
+        curl -o allure-commandline.zip -L https://github.com/allure-framework/allure2/releases/download/2.16.1/allure-2.16.1.zip
+        unzip allure-commandline.zip -d allure
+        sudo mv allure /usr/local/bin/allure
+
     - name: Generate Allure Report
-      run: ./allure generate build/allure-results --clean -o build/allure-report
+      run: allure generate build/allure-results --clean -o build/allure-report
 
     # Archive Test Result
     - name: Archive Test Result
