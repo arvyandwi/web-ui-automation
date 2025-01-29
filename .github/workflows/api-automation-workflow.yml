@@ -12,7 +12,9 @@ jobs:
 
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
+      pages: write
+      id-token: write
 
     steps:
     - uses: actions/checkout@v4
@@ -32,3 +34,19 @@ jobs:
 
     - name: Execute Test
       run: ./gradlew testApi
+
+    # Archive Test Result
+    - name: Archive Test Result
+      uses: actions/upload-artifact@v4.6.0
+      if: always()
+      with:
+        name: API Test Report
+        path: reports
+
+    # Deploy to Github Pages
+    - name: Deploy Reports to Github Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v4.0.0
+      with:
+        personal_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: reports
