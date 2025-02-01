@@ -42,9 +42,11 @@ jobs:
         node-version: '22.11.0'  # Gunakan versi Node.js yang sesuai
     - run: npm install -g allure-commandline --save-dev
 
-    #Build Allure Report
+    # Build Allure Report
     - name: Build Allure Report
-      run: allure serve build/allure-results
+      run: 
+        allure serve build/allure-results
+        exit 0
 
     # Generate Allure Report
     - name: Generate Allure Report
