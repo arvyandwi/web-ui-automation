@@ -62,6 +62,10 @@ task cucumber() {
 
 task testApi(type: Test) {
     useTestNG() {
-        suites 'src/test/resources/api-testng.xml'
+        suites 'src/test/resources/api-testing.xml'
+    }
+
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED"
     }
 }
