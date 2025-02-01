@@ -44,9 +44,7 @@ jobs:
 
     # Build Allure Report
     - name: Build Allure Report
-      run: 
-        allure serve build/allure-results
-        exit 0
+      run: allure serve build/allure-results & exit 0
 
     # Generate Allure Report
     - name: Generate Allure Report
