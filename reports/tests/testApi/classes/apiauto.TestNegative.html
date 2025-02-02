@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.630s</div>
+<div class="counter">0.485s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,12 +79,12 @@
 </thead>
 <tr>
 <td class="success">testNegativeGetUser</td>
-<td class="success">0.319s</td>
+<td class="success">0.305s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testNegativeRegisterUnsuccessful</td>
-<td class="success">0.311s</td>
+<td class="success">0.180s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -93,12 +93,12 @@
 <h2>Standard output</h2>
 <span class="code">
 <pre>HTTP/1.1 404 Not Found
-Date: Sun, 02 Feb 2025 07:07:20 GMT
+Date: Sun, 02 Feb 2025 07:11:09 GMT
 Content-Type: application/json; charset=utf-8
 Content-Length: 2
 Connection: keep-alive
-Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;max_age&quot;:3600,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?ts=1738480040&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=8uFmo6Zpvj8h6cQ40V5U20tes6Bw11A3KM%2BmsDJXISU%3D&quot;}]}
-Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1738480040&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=8uFmo6Zpvj8h6cQ40V5U20tes6Bw11A3KM%2BmsDJXISU%3D
+Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;max_age&quot;:3600,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?ts=1738480269&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=efZVjCk5AljQOKLdT9d8bquGdjKcfIF31hHC%2BXzdU4g%3D&quot;}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1738480269&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=efZVjCk5AljQOKLdT9d8bquGdjKcfIF31hHC%2BXzdU4g%3D
 Nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.005,&quot;failure_fraction&quot;:0.05,&quot;response_headers&quot;:[&quot;Via&quot;]}
 X-Powered-By: Express
 Access-Control-Allow-Origin: *
@@ -108,28 +108,28 @@ Cache-Control: max-age=14400
 CF-Cache-Status: EXPIRED
 Vary: Accept-Encoding
 Server: cloudflare
-CF-RAY: 90b857fd4bfbfaec-SJC
-server-timing: cfL4;desc=&quot;?proto=TCP&amp;rtt=1622&amp;min_rtt=1545&amp;rtt_var=635&amp;sent=6&amp;recv=7&amp;lost=0&amp;retrans=0&amp;sent_bytes=3108&amp;recv_bytes=762&amp;delivery_rate=2772815&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=e17e0eba0939a262&amp;ts=297&amp;x=0&quot;
+CF-RAY: 90b85d908bd6c5c2-IAD
+server-timing: cfL4;desc=&quot;?proto=TCP&amp;rtt=958&amp;min_rtt=958&amp;rtt_var=361&amp;sent=6&amp;recv=7&amp;lost=0&amp;retrans=0&amp;sent_bytes=3107&amp;recv_bytes=762&amp;delivery_rate=4439378&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=a6fc13fdeb58328b&amp;ts=283&amp;x=0&quot;
 
 {
     
 }
 HTTP/1.1 400 Bad Request
-Date: Sun, 02 Feb 2025 07:07:21 GMT
+Date: Sun, 02 Feb 2025 07:11:09 GMT
 Content-Type: application/json; charset=utf-8
 Content-Length: 28
 Connection: keep-alive
-Cf-Ray: 90b857ff3afcfa96-SJC
-Server: cloudflare
-Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;max_age&quot;:3600,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?ts=1738480041&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=QKiwLTQd2mtPiHWOrJe%2FjjYxE1Ayyl0HrlTBI%2Fmr9vo%3D&quot;}]}
-Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1738480041&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=QKiwLTQd2mtPiHWOrJe%2FjjYxE1Ayyl0HrlTBI%2Fmr9vo%3D
+Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;max_age&quot;:3600,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?ts=1738480269&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=efZVjCk5AljQOKLdT9d8bquGdjKcfIF31hHC%2BXzdU4g%3D&quot;}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1738480269&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=efZVjCk5AljQOKLdT9d8bquGdjKcfIF31hHC%2BXzdU4g%3D
 Nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.005,&quot;failure_fraction&quot;:0.05,&quot;response_headers&quot;:[&quot;Via&quot;]}
 X-Powered-By: Express
 Access-Control-Allow-Origin: *
 Etag: W/&quot;1c-NmpazMScs9tOqR7eDEesn+pqC9Q&quot;
 Via: 1.1 vegur
-Cf-Cache-Status: DYNAMIC
-server-timing: cfL4;desc=&quot;?proto=TCP&amp;rtt=1459&amp;min_rtt=1442&amp;rtt_var=553&amp;sent=6&amp;recv=7&amp;lost=0&amp;retrans=0&amp;sent_bytes=3109&amp;recv_bytes=855&amp;delivery_rate=2970873&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=be53a5c4d8e063fa&amp;ts=295&amp;x=0&quot;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 90b85d9268fa1785-IAD
+server-timing: cfL4;desc=&quot;?proto=TCP&amp;rtt=965&amp;min_rtt=956&amp;rtt_var=376&amp;sent=6&amp;recv=7&amp;lost=0&amp;retrans=0&amp;sent_bytes=3107&amp;recv_bytes=855&amp;delivery_rate=4167315&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=c6bc58137fe2f134&amp;ts=165&amp;x=0&quot;
 
 {
     &quot;error&quot;: &quot;Missing password&quot;
@@ -145,7 +145,7 @@ server-timing: cfL4;desc=&quot;?proto=TCP&amp;rtt=1459&amp;min_rtt=1442&amp;rtt_
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.8</a> at Feb 2, 2025, 7:07:21 AM</p>
+<a href="http://www.gradle.org">Gradle 8.8</a> at Feb 2, 2025, 7:11:09 AM</p>
 </div>
 </div>
 </body>
