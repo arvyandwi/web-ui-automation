@@ -40,11 +40,25 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '22.11.0'  # Gunakan versi Node.js yang sesuai
-    - run: npm install -g allure-commandline --save-dev
+    - run: npm install allure-commandline@latest
 
-    # Build Allure Report
-    - name: Build Allure Report
-      run: allure serve build/allure-results & exit 0
+    # # Build Allure Report
+    # - name: Build Allure Report
+    #   run: allure serve build/allure-results & exit 0
+
+    # Check Directory Permissions
+    - name: Check Directory Permissions
+      run: |
+        echo "Checking Directory Permissions..."
+        ls -l build/allure-results
+        ls -l build
+        whoami
+
+    - name: Verify Allure Results
+      run: |
+        echo "Verifying allure results..."
+        ls build/allure-results
+        cat build/allure-results/*
 
     # Generate Allure Report
     - name: Generate Allure Report
