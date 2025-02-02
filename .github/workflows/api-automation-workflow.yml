@@ -72,7 +72,7 @@ jobs:
       if: always()
       with:
         name: API Test Report
-        path: build/*
+        path: allure-history
 
     # Deploy to Github Pages
     - name: Deploy Reports to Github Pages
