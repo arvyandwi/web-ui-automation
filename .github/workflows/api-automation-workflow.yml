@@ -32,37 +32,43 @@ jobs:
     - run: npm install -g allure-commandline --save-dev
 
     # Build Allure Report
-    - name: Build Allure Report
-      run: allure serve build/allure-results & exit 0
-
-    # Check Directory Permissions
-    # - name: Check Directory Permissions
-    #   run: |
-    #     echo "Checking Directory Permissions..."
-    #     ls -l build/allure-results
-    #     ls -l build
-    #     whoami
-
-    # - name: Verify Allure Results
-    #   run: |
-    #     echo "Verifying allure results..."
-    #     ls build/allure-results
-    #     cat build/allure-results/*
+    # - name: Build Allure Report
+    #   run: allure serve build/allure-results & exit 0
 
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
 
+    # Build Gradle Wrapper
     - name: Build with Gradle Wrapper
       run: chmod +x ./gradlew
 
+    # Execute Test
     - name: Execute Test
       run: ./gradlew testApi
 
+    # Load Test Report History
+    - name: Load test report history
+      uses: actions/checkout@v3
+      if: always()
+      continue-on-error: true
+      with:
+        ref: gh-pages
+        path: gh-pages
+
+    # Build Test Report
+    - name: Build test report
+      uses: simple-elf/allure-report-action@v1.7
+      if: always()
+      with:
+        gh_pages: gh-pages
+        allure_history: allure-history
+        allure_results: build/allure-results
+
     # Generate Allure Report
-    - name: Generate Allure Report
-      run: allure generate build/allure-results --clean -o build/allure-report
+    # - name: Generate Allure Report
+    #   run: allure generate build/allure-results --clean -o build/allure-report
 
     # Archive Test Result
     - name: Archive Test Result
@@ -70,12 +76,13 @@ jobs:
       if: always()
       with:
         name: API Test Report
-        path: build
+        path: build/*
 
     # Deploy to Github Pages
     - name: Deploy Reports to Github Pages
-      if: always()
       uses: peaceiris/actions-gh-pages@v4.0.0
+      if: always()
       with:
         personal_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: build
+        publish_branch: gh-pages
+        publish_dir: allure-history
